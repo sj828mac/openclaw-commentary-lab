@@ -11,33 +11,114 @@
     <div class="article-wrap">
       <aside class="sidebar">
         <div class="panel">
-          <div class="kicker">Style A</div>
-          <h3>長文評論版</h3>
-          <p>適合正式發文、電子報、深度觀察。</p>
+          <div class="kicker">Editorial</div>
+          <h3>ai-hedge-fund 長文評論版</h3>
+          <p>完整論述版，適合正式 blog / 電子報。</p>
           <p><a href="../index.html">← 回首頁</a></p>
         </div>
       </aside>
       <main class="content">
-        <h1>ai-hedge-fund 值得追，但別把它當成 AI 已經接管投資決策的證據</h1>
-        <p class="quick">這個爆紅專案真正值得看的，不是它能不能幫你打敗市場，而是它如何把多 agent 金融研究 workflow 做成一個可觀察、可拆解、也可質疑的工程樣板。</p>
-        <p>最近又重新看了一輪 <code>virattt/ai-hedge-fund</code>，我的結論比想像中更明確：這個專案值得追，但不值得神化。</p>
-        <blockquote>它正在把一個 agent-native 的金融研究系統，從 viral demo 一步一步拉向工程現實。</blockquote>
-        <h2>它為什麼會爆紅？</h2>
-        <p>因為它把多角色 agent、valuation / sentiment / fundamentals / technicals、risk manager / portfolio manager、backtester 與 Web UI 全部打包進一個高吸睛的金融敘事裡。這是非常標準、也非常強力的 AI 傳播模板。</p>
-        <h2>但它自己也沒有說自己是可實戰的基金系統</h2>
-        <p>README 很清楚：proof of concept、教育用途、不實際下單。換句話說，它比較像研究 / 模擬框架，而不是已被驗證的自動交易系統。</p>
-        <h2>最近最重要的，不是 agent 更聰明，而是工程問題浮出來</h2>
-        <p>近期 issue #572 與對應 PR #573 暴露了一個很有代表性的問題：回測 prefetch date range 沒有完整覆蓋 backtest window，導致長區間回測出現 cache miss，進而在 hot loop 裡觸發大量 uncached API calls。這不是模型問題，而是資料與系統問題。</p>
-        <p>同時它也在補 sentiment 缺資料錯誤處理、Cache 測試、Windows 腳本、UI 與 import path。這些修補軌跡說明它已經從「好看的 demo」進入「真實使用者大量踩坑後的工程補課期」。</p>
-        <h2>從 OpenClaw 視角看，它更像一個垂直 agent 樣板</h2>
-        <p>如果從 OpenClaw 架構看，這個 repo 的流程本質是：ingest signals → 分派 agent → 聚合觀點 → 加入 risk control → 形成最終決策。這跟通用 agent system 的底層結構非常接近，只是 domain 從通用任務換成金融研究。</p>
-        <h2>我的判斷</h2>
-        <ul>
-          <li><strong>值得追蹤度：</strong>高</li>
-          <li><strong>可直接採用度：</strong>中低</li>
-          <li><strong>內容價值：</strong>高</li>
-        </ul>
-        <p>如果你把它當成投資神話，你會高估它；但如果你把它當成 agent 工程現實的觀察窗口，那它就非常值得追。</p>
+        <h1>ai-hedge-fund 可發文版本 v1</h1>
+<h2>標題</h2>
+<p>ai-hedge-fund 值得追，但別把它當成 AI 已經接管投資決策的證據</p>
+<h2>副標</h2>
+<p>這個爆紅專案真正值得看的，不是它能不能幫你打敗市場，而是它如何把多 agent 金融研究 workflow 做成一個可觀察、可拆解、也可質疑的工程樣板。</p>
+<p>---</p>
+<p>最近又重新看了一輪 `virattt/ai-hedge-fund`，我的結論比想像中更明確：</p>
+<blockquote>這個專案值得追，但不值得神化。</blockquote>
+<p>很多人看到它，第一反應會是：</p>
+<ul>
+<li>AI 開始自己做投資決策了</li>
+<li>多 agent 團隊正在接近真實 hedge fund</li>
+<li>金融分析工作以後是不是都能交給 agent</li>
+</ul>
+<p>這些想像不是完全沒道理，因為它確實把一個很會爆紅的組合包得很完整：</p>
+<ul>
+<li>多角色 agent</li>
+<li>valuation / sentiment / fundamentals / technicals</li>
+<li>risk manager / portfolio manager</li>
+<li>backtester</li>
+<li>CLI + Web UI</li>
+<li>金融這種高吸睛題材</li>
+</ul>
+<p>所以它會紅，我完全不意外。</p>
+<p>但如果你真的去看它的 README、近期 issue、PR 與修補方向，你會發現這個專案真正值得追的地方，不是「AI 已經能穩定選股」，而是：</p>
+<blockquote>它正在把一個 agent-native 的金融研究系統，從 viral demo 一步一步拉向工程現實。</blockquote>
+<h2>它其實自己也沒有把自己說成實戰基金系統</h2>
+<p>這點很重要。</p>
+<p>README 開頭就明講：</p>
+<ul>
+<li>這是 **proof of concept**</li>
+<li>是用來探索 AI 做交易決策的可能性</li>
+<li>**只供教育用途**</li>
+<li>**不是真的下單**</li>
+</ul>
+<p>所以如果有人把它解讀成「AI 已經證明能接管投資決策」，那其實是讀太快了。</p>
+<p>更合理的定位應該是：</p>
+<blockquote>一個把多 agent、金融資料、回測、風險管理與 UI 串起來的研究 / 模擬框架。</blockquote>
+<p>這個定位其實反而讓它更有價值。因為一旦你不再用神話眼光看它，就會開始看到真正值得學的部分。</p>
+<h2>最近最有價值的訊號，不是 agent 更聰明了，而是工程問題浮出來了</h2>
+<p>近期有一個很代表性的 bug：</p>
+<ul>
+<li>回測 prefetch date range 沒有完整覆蓋 backtest window</li>
+<li>導致長區間回測時 cache miss</li>
+<li>在 hot loop 裡反覆打 uncached API call</li>
+<li>最後可能造成 rate limit、速度問題、甚至資料缺口</li>
+</ul>
+<p>這種問題很重要，因為它提醒大家：</p>
+<blockquote>真實的 agent 系統，最先失真、失穩、失敗的地方，常常不是模型推理，而是資料與工具鏈。</blockquote>
+<p>同一時期這個 repo 還在補：</p>
+<ul>
+<li>缺新聞資料時的 sentiment handling</li>
+<li>cache 類別測試</li>
+<li>Windows 腳本</li>
+<li>import path 清理</li>
+<li>Web UI / 模型選項問題</li>
+</ul>
+<p>把這些放在一起看，你會發現它現在其實進入了一個很有意思的階段：</p>
+<p>### 第一階段：概念爆紅</p>
+<p>大家看到 AI hedge fund 這個詞就先按星。</p>
+<p>### 第二階段：真實使用者湧入</p>
+<p>開始有人真的跑、真的改、真的踩坑。</p>
+<p>### 第三階段：工程補課</p>
+<p>專案開始補資料邊界、測試、相容性、穩定性。</p>
+<p>而 `ai-hedge-fund` 現在最值得追的，就是這個第三階段的開展。</p>
+<h2>從 OpenClaw 的角度看，它更像一個垂直 agent 樣板</h2>
+<p>如果從 OpenClaw 視角來看，這個專案最值得學的其實不是投資結論，而是它的結構：</p>
+<ul>
+<li>ingest signals</li>
+<li>交給不同 agent 分析</li>
+<li>聚合不同觀點</li>
+<li>加上 risk control</li>
+<li>由 portfolio manager 收斂決策</li>
+</ul>
+<p>這種流程跟很多通用 agent 系統的底層邏輯很像。</p>
+<p>差別只在於：</p>
+<ul>
+<li>它做的是金融研究</li>
+<li>你未來可能做的是技術評論、情報蒐集、決策支援</li>
+</ul>
+<p>但架構精神是一樣的。</p>
+<p>也因此，`ai-hedge-fund` 真正有趣的地方，不只是它可以拿來評論，還在於它可以被當成一個案例，去理解：</p>
+<blockquote>多 agent 系統一旦離開 demo 簡報，真正會先卡在哪裡？</blockquote>
+<p>答案通常不是「模型不夠大」，而是：</p>
+<ul>
+<li>資料正不正確</li>
+<li>快取策略對不對</li>
+<li>工具會不會壞</li>
+<li>回測是不是有盲點</li>
+<li>系統出了錯，有沒有辦法定位原因</li>
+</ul>
+<h2>所以這個專案值不值得追？</h2>
+<p>我的答案是：**很值得。**</p>
+<p>但理由不是因為它已經證明 AI 能打敗市場，而是因為：</p>
+<p>1. 它是目前少數把多 agent 金融研究 workflow 做成完整敘事的熱門專案之一</p>
+<p>2. 它開始暴露出真實世界 agent 系統一定會遇到的工程問題</p>
+<p>3. 它非常適合拿來觀察一個爆紅 AI demo 能不能走向可維護框架</p>
+<h2>最後一句話</h2>
+<p>如果你把 `ai-hedge-fund` 當成投資神話，你會高估它。</p>
+<p>但如果你把它當成一個觀察 agent 工程現實的窗口，那它就非常值得追。</p>
+<p>而且，這可能才是它真正長期有價值的地方。</p>
       </main>
     </div>
   </div>
