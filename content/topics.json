@@ -1,0 +1,31 @@
+[
+  {
+    "topic": "ai-hedge-fund",
+    "title": "ai-hedge-fund",
+    "description": "AI agent x finance 代表性案例，適合追蹤工程化、資料層與多 agent workflow 演進。",
+    "sourceDir": "ai-hedge-fund",
+    "variants": [
+      {
+        "source": "publish-ready-v1.md",
+        "slug": "ai-hedge-fund-editorial",
+        "title": "ai-hedge-fund 長文評論版",
+        "style": "Editorial",
+        "description": "完整論述版，適合正式 blog / 電子報。"
+      },
+      {
+        "source": "short-post-v1.md",
+        "slug": "ai-hedge-fund-quick",
+        "title": "ai-hedge-fund 短版快評版",
+        "style": "Quick Take",
+        "description": "縮短版核心觀點，適合快速發佈。"
+      },
+      {
+        "source": "channel-variants.md",
+        "slug": "ai-hedge-fund-channel",
+        "title": "ai-hedge-fund 渠道變體版",
+        "style": "Channel Variants",
+        "description": "Telegram / Threads / Blog intro 三種渠道輸出。"
+      }
+    ]
+  }
+]
