@@ -56,5 +56,34 @@
         "description": "Telegram / Threads / Blog intro 三種渠道輸出。"
       }
     ]
+  },
+  {
+    "topic": "mempalace",
+    "title": "mempalace",
+    "description": "The highest-scoring AI memory system ever benchmarked. And it's free.",
+    "sourceDir": "mempalace",
+    "variants": [
+      {
+        "source": "publish-ready-v1.md",
+        "slug": "mempalace-editorial",
+        "title": "mempalace 長文評論版",
+        "style": "Editorial",
+        "description": "完整論述版，適合正式 blog / 電子報。"
+      },
+      {
+        "source": "short-post-v1.md",
+        "slug": "mempalace-quick",
+        "title": "mempalace 短版快評版",
+        "style": "Quick Take",
+        "description": "縮短版核心觀點，適合快速發佈。"
+      },
+      {
+        "source": "channel-variants.md",
+        "slug": "mempalace-channel",
+        "title": "mempalace 渠道變體版",
+        "style": "Channel Variants",
+        "description": "Telegram / Threads / Blog intro 三種渠道輸出。"
+      }
+    ]
   }
 ]

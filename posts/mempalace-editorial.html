@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>mempalace 長文評論版</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="container article">
+    <div class="article-wrap">
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="kicker">Editorial</div>
+          <h3>mempalace 長文評論版</h3>
+          <p>完整論述版，適合正式 blog / 電子報。</p>
+          <p><a href="../index.html">← 回首頁</a></p>
+        </div>
+      </aside>
+      <main class="content">
+        <h1>mempalace 可發文版本 v1</h1>
+<h2>標題</h2>
+<p>mempalace 值得追，但真正值得看的不是它記住了多少，而是它怎麼面對記憶系統最難的現實</p>
+<h2>副標</h2>
+<p>這個爆紅專案真正有價值的，不只是高 benchmark 分數，而是它把 AI 長期記憶這件事，從抽象口號拉進了公開、可質疑、可修補的工程現場。</p>
+<p>---</p>
+<p>如果只看 `mempalace` 的第一眼印象，你很容易把它理解成：</p>
+<ul>
+<li>又一個 AI memory 工具</li>
+<li>主打超高 benchmark 分數</li>
+<li>用一套很有畫面感的 palace metaphor 來包裝記憶系統</li>
+</ul>
+<p>這些都對，但也都還不夠。</p>
+<p>因為 mempalace 真正值得追的地方，不是它把「AI 能記住更多東西」這件事講得多動人，而是它正在回答一個更核心的問題：</p>
+<blockquote>AI 的長期記憶系統，到底應該怎麼做，才不只是看起來厲害？</blockquote>
+<h2>它的路線很鮮明：盡量保留原文，而不是先替你決定什麼值得記</h2>
+<p>很多 memory 系統的第一步，是先抽取重點、偏好、事實，再把剩下的大量原始內容丟掉。</p>
+<p>mempalace 走的是另一條路。</p>
+<p>它的敘事核心是：</p>
+<ul>
+<li>盡量保留原始對話與內容</li>
+<li>不急著過濾掉細節</li>
+<li>用 wing / room / hall / closet / drawer 這種空間式結構，去幫助檢索與喚回</li>
+</ul>
+<p>這條路線的吸引力很大，因為它打中了一個很多人對 AI 記憶系統的不滿：</p>
+<blockquote>問題常常不是 AI 沒記住結論，而是它把過程、理由與脈絡先丟掉了。</blockquote>
+<p>從這個角度看，mempalace 的主張確實有新鮮感，而且也很適合被拿來做 OpenClaw 生態裡的對照樣本。</p>
+<h2>但這個專案最近最值得看的，不是口號，而是它開始進入誠信與穩定性的壓力測試</h2>
+<p>如果你去看它最近的 issue、PR 和 README 修正，你會發現一件很重要的事：</p>
+<p>這個專案已經不只是「爆紅」，而是開始進入公開壓力測試階段。</p>
+<p>它最有代表性的變化，不是又新增了什麼很炫的功能，而是 README 自己主動承認：</p>
+<ul>
+<li>AAAK token 範例曾經算錯</li>
+<li>30x lossless compression 說法過度誇張</li>
+<li>&quot;+34% palace boost&quot; 的敘事有誤導性</li>
+<li>contradiction detection 並沒有像文案說的那樣真的接進核心流程</li>
+<li>100% with Haiku rerank 雖然有結果，但 pipeline 尚未完整公開</li>
+</ul>
+<p>這段更正文非常關鍵，因為它讓 mempalace 從一個容易被神化的 AI 記憶專案，轉成一個更值得觀察的東西：</p>
+<blockquote>一個必須在社群質疑下，重新校正自己敘事與工程事實的 memory infrastructure 專案。</blockquote>
+<p>老實說，這反而讓它更值得追。</p>
+<p>因為真正重要的，不是它有沒有在 launch 文案裡把自己講得很厲害，而是它能不能在現實世界裡，把誇張敘事收斂成可信的工程系統。</p>
+<h2>問題也開始集中到更真實的地方：hooks、MCP、search、版本漂移</h2>
+<p>另一個值得注意的點，是近期 open issues / PR 的重心。</p>
+<p>現在 mempalace 被大量討論的，不只是記憶理論，而是這些實際問題：</p>
+<ul>
+<li>hooks decision 值錯誤</li>
+<li>preCompact 被阻塞</li>
+<li>MCP stdout / stderr 汙染 JSON-RPC</li>
+<li>embedding / search 品質不穩</li>
+<li>plugin manifest 與 release 版本漂移</li>
+<li>假網站與安全風險提醒不足</li>
+</ul>
+<p>這很重要，因為這說明它已經從「概念吸睛」走向「工具邊界與產品治理」的現實階段。</p>
+<p>這也是所有 agent infrastructure 類專案都一定會遇到的時刻：</p>
+<p>不是你能不能做出功能，而是你能不能把功能變成穩定、可依賴、可被信任的系統。</p>
+<h2>從 OpenClaw 角度看，mempalace 是很好的對照樣本</h2>
+<p>對 OpenClaw 來說，mempalace 特別值得追，不是因為它和 OpenClaw 完全相同，而是因為它碰到的是同一個核心問題族群：</p>
+<ul>
+<li>長期記憶怎麼保存</li>
+<li>session 結束後上下文怎麼延續</li>
+<li>MCP 介面如何穩定提供記憶能力</li>
+<li>原文保留與摘要壓縮怎麼平衡</li>
+<li>記憶層的可信度如何建立</li>
+</ul>
+<p>你可以把 mempalace 看成一個非常好的公開實驗場。</p>
+<p>它讓我們看到：</p>
+<ul>
+<li>raw-first memory 的吸引力在哪裡</li>
+<li>memory 敘事最容易在哪裡被過度神化</li>
+<li>benchmark 分數和真實使用體驗之間可能有多大距離</li>
+<li>一個 AI memory 專案，在熱度起來之後會被用什麼標準審查</li>
+</ul>
+<h2>所以這個專案值不值得追？</h2>
+<p>我的答案是：**很值得。**</p>
+<p>但值得追的原因，不是它已經證明自己是終局解，而是因為它已經走到一個更有價值的階段：</p>
+<p>1. 它真的把 AI 記憶這件事做成了可跑、可 benchmark、可整合的系統</p>
+<p>2. 它也真的開始被社群拿真實世界標準來檢查</p>
+<p>3. 它現在暴露出的問題，恰好就是 agent memory 最難、最值得研究的問題</p>
+<h2>最後一句話</h2>
+<p>如果你把 mempalace 看成「會記住很多東西的 AI 工具」，你會低估它。</p>
+<p>但如果你把它看成：</p>
+<blockquote>一個正在接受公開誠信、穩定性與檢索品質壓力測試的 agent long-term memory 專案</blockquote>
+<p>那你就會知道，這個 repo 為什麼真的值得持續追。</p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

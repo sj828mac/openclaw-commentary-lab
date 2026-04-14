@@ -52,5 +52,32 @@
     "topic": "graphify",
     "status": "published",
     "path": "posts/graphify-channel.html"
+  },
+  {
+    "slug": "mempalace-editorial",
+    "title": "mempalace 長文評論版",
+    "style": "Editorial",
+    "description": "完整論述版，適合正式 blog / 電子報。",
+    "topic": "mempalace",
+    "status": "published",
+    "path": "posts/mempalace-editorial.html"
+  },
+  {
+    "slug": "mempalace-quick",
+    "title": "mempalace 短版快評版",
+    "style": "Quick Take",
+    "description": "縮短版核心觀點，適合快速發佈。",
+    "topic": "mempalace",
+    "status": "published",
+    "path": "posts/mempalace-quick.html"
+  },
+  {
+    "slug": "mempalace-channel",
+    "title": "mempalace 渠道變體版",
+    "style": "Channel Variants",
+    "description": "Telegram / Threads / Blog intro 三種渠道輸出。",
+    "topic": "mempalace",
+    "status": "published",
+    "path": "posts/mempalace-channel.html"
   }
 ]
