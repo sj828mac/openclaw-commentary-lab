@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ai-hedge-fund 長文評論版</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="container article">
+    <div class="article-wrap">
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="kicker">Style A</div>
+          <h3>長文評論版</h3>
+          <p>適合正式發文、電子報、深度觀察。</p>
+          <p><a href="../index.html">← 回首頁</a></p>
+        </div>
+      </aside>
+      <main class="content">
+        <h1>ai-hedge-fund 值得追，但別把它當成 AI 已經接管投資決策的證據</h1>
+        <p class="quick">這個爆紅專案真正值得看的，不是它能不能幫你打敗市場，而是它如何把多 agent 金融研究 workflow 做成一個可觀察、可拆解、也可質疑的工程樣板。</p>
+        <p>最近又重新看了一輪 <code>virattt/ai-hedge-fund</code>，我的結論比想像中更明確：這個專案值得追，但不值得神化。</p>
+        <blockquote>它正在把一個 agent-native 的金融研究系統，從 viral demo 一步一步拉向工程現實。</blockquote>
+        <h2>它為什麼會爆紅？</h2>
+        <p>因為它把多角色 agent、valuation / sentiment / fundamentals / technicals、risk manager / portfolio manager、backtester 與 Web UI 全部打包進一個高吸睛的金融敘事裡。這是非常標準、也非常強力的 AI 傳播模板。</p>
+        <h2>但它自己也沒有說自己是可實戰的基金系統</h2>
+        <p>README 很清楚：proof of concept、教育用途、不實際下單。換句話說，它比較像研究 / 模擬框架，而不是已被驗證的自動交易系統。</p>
+        <h2>最近最重要的，不是 agent 更聰明，而是工程問題浮出來</h2>
+        <p>近期 issue #572 與對應 PR #573 暴露了一個很有代表性的問題：回測 prefetch date range 沒有完整覆蓋 backtest window，導致長區間回測出現 cache miss，進而在 hot loop 裡觸發大量 uncached API calls。這不是模型問題，而是資料與系統問題。</p>
+        <p>同時它也在補 sentiment 缺資料錯誤處理、Cache 測試、Windows 腳本、UI 與 import path。這些修補軌跡說明它已經從「好看的 demo」進入「真實使用者大量踩坑後的工程補課期」。</p>
+        <h2>從 OpenClaw 視角看，它更像一個垂直 agent 樣板</h2>
+        <p>如果從 OpenClaw 架構看，這個 repo 的流程本質是：ingest signals → 分派 agent → 聚合觀點 → 加入 risk control → 形成最終決策。這跟通用 agent system 的底層結構非常接近，只是 domain 從通用任務換成金融研究。</p>
+        <h2>我的判斷</h2>
+        <ul>
+          <li><strong>值得追蹤度：</strong>高</li>
+          <li><strong>可直接採用度：</strong>中低</li>
+          <li><strong>內容價值：</strong>高</li>
+        </ul>
+        <p>如果你把它當成投資神話，你會高估它；但如果你把它當成 agent 工程現實的觀察窗口，那它就非常值得追。</p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
