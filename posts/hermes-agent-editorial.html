@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hermes-agent 長文評論版</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="container article">
+    <div class="article-wrap">
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="kicker">Editorial</div>
+          <h3>hermes-agent 長文評論版</h3>
+          <p>完整論述版，適合正式 blog / 電子報。</p>
+          <p><a href="../index.html">← 回首頁</a></p>
+        </div>
+      </aside>
+      <main class="content">
+        <h1>hermes-agent 可發文版本 v1</h1>
+<h2>標題</h2>
+<p>Hermes Agent 值得追，不只是因為它大，而是因為它正在變成一個 agent 平台</p>
+<h2>副標</h2>
+<p>這不是一般工具 repo，而是一個正在高速膨脹中的 agent runtime / gateway / orchestration 平台樣本。</p>
+<p>---</p>
+<p>如果你只是把 `nousresearch/hermes-agent` 看成另一個 agent 工具，那你很可能低估它了。</p>
+<p>因為這個 repo 現在真正有意思的地方，不只是 stars 很高，也不只是 release 很勤，而是它已經明顯超過「單一 agent 工具」的範圍，開始長成一個通用 agent platform。</p>
+<p>從數字看，它已經是超大規模社群專案：</p>
+<ul>
+<li>9 萬多 stars</li>
+<li>1.2 萬多 forks</li>
+<li>issue / PR 編號已經破 11000</li>
+<li>release 幾乎幾天一版</li>
+</ul>
+<p>但真正值得看的，不是熱度本身，而是它正在碰什麼問題。</p>
+<h2>它在做的，不只是 CLI agent</h2>
+<p>從 README 與 repo 結構就看得出來，Hermes Agent 現在的能力面非常廣：</p>
+<ul>
+<li>gateway</li>
+<li>cron</li>
+<li>skills</li>
+<li>memory</li>
+<li>MCP</li>
+<li>subagents</li>
+<li>toolsets</li>
+<li>web / website</li>
+<li>research / trajectory / compression</li>
+<li>多 provider / 多 channel / 多 terminal backend</li>
+</ul>
+<p>它不是一個只靠 prompt 或單一對話迴圈運作的小工具，而是一個想把 agent 長期運作所需的東西盡量包起來的平台。</p>
+<p>README 裡甚至直接把自己描述成：</p>
+<ul>
+<li>具備 closed learning loop</li>
+<li>支援 messaging gateway</li>
+<li>內建 cron scheduler</li>
+<li>可 delegate 與平行化</li>
+<li>可跑在 VPS、GPU cluster、serverless infra</li>
+<li>能從 OpenClaw 自動 migrate</li>
+</ul>
+<p>這些訊號放在一起看，其實很清楚：</p>
+<blockquote>Hermes Agent 正在競爭的，不只是 agent 工具的位置，而是通用 agent runtime / platform 的位置。</blockquote>
+<h2>真正值得追的，是平台摩擦開始浮出來了</h2>
+<p>Hermes Agent 現在最有價值的地方，不是「功能很多」，而是你開始看得到一個 agent 平台真實會卡在哪裡。</p>
+<p>像最近的 commit、PR、issue，很能代表這點：</p>
+<ul>
+<li>gateway transcript atomic rewrite，避免中途毀損</li>
+<li>`/status` 補 model / provider 資訊</li>
+<li>context compressor 要保留最後一則 user message，避免 active-task loss</li>
+<li>sub-agent polling loop 出現 UnboundLocalError</li>
+<li>Telegram exec approval prompt 要 escape command content</li>
+<li>provider base_url resolution 出現 collision</li>
+<li>`delegate_task` 環境缺 `$HOME`</li>
+<li>long tool-only run 沒有 still working update</li>
+</ul>
+<p>這些問題都不是表面功能沒接好而已，而是在說：</p>
+<ul>
+<li>session lifecycle 很複雜</li>
+<li>gateway 是真核心</li>
+<li>sub-agent 很容易失真</li>
+<li>provider abstraction 很容易裂開</li>
+<li>長任務 UX 與工具安全很難同時兼顧</li>
+</ul>
+<p>也就是說，Hermes Agent 現在已經進入平台級問題的密集區。</p>
+<h2>Gateway 是最值得盯的戰場</h2>
+<p>從最近的變化看，gateway 很明顯是 Hermes Agent 的中樞之一。</p>
+<p>你會看到很多改動都直接打在 gateway：</p>
+<ul>
+<li>transcript rewrite</li>
+<li>`/status` UX</li>
+<li>channel prompt guard</li>
+<li>SMTP-only outbound</li>
+<li>Telegram 顯示細節</li>
+<li>QQ / TTS / voice 類問題</li>
+</ul>
+<p>這代表 gateway 不是附屬功能，而是：</p>
+<ul>
+<li>session 狀態入口</li>
+<li>多平台延續層</li>
+<li>delivery 層</li>
+<li>approval / status / feedback UX 層</li>
+</ul>
+<p>如果 agent 最後真的要變成可長期使用的系統，那 gateway 幾乎一定會是平台的核心之一。Hermes Agent 現在正好把這件事攤開來讓大家看。</p>
+<h2>Provider abstraction 也開始進入真實世界</h2>
+<p>另一個很值得看的點，是 Hermes Agent 現在支援的 provider 與模型面越來越廣。</p>
+<p>README 直接列了一大串：</p>
+<ul>
+<li>Nous Portal</li>
+<li>OpenRouter</li>
+<li>Xiaomi MiMo</li>
+<li>z.ai/GLM</li>
+<li>Kimi/Moonshot</li>
+<li>MiniMax</li>
+<li>Hugging Face</li>
+<li>OpenAI</li>
+<li>自訂 endpoint</li>
+</ul>
+<p>這當然很吸引人，但也會直接帶來 abstraction 複雜度。</p>
+<p>最近一個很典型的例子，就是 issue #11059：</p>
+<blockquote>Cron sub-agent path collision: `/v4/v1/messages`</blockquote>
+<p>主 session 正常，但到 cron / delegated sub-agent 路徑時，OpenAI 與 Anthropic 的 endpoint resolution 被錯誤拼接，最後變成一個不存在的路徑。</p>
+<p>這類問題很有代表性，因為它不是主流程不能用，而是：</p>
+<ul>
+<li>主流程能用</li>
+<li>子流程、子 session、delegation 一複雜就開始出現不一致</li>
+</ul>
+<p>這正是平台 abstraction 最常出問題的地方。</p>
+<h2>Hermes Agent 跟 OpenClaw 放在一起看，會更有意思</h2>
+<p>如果把 Hermes Agent 跟 OpenClaw 放在一起看，對照感會很強。</p>
+<p>Hermes Agent 比較像：</p>
+<ul>
+<li>超高速擴張中的大型通用 agent 平台</li>
+<li>社群驅動很強</li>
+<li>功能面極廣</li>
+<li>很多能力都想原生包進來</li>
+</ul>
+<p>OpenClaw 比較像：</p>
+<ul>
+<li>更高可塑性的 agent runtime</li>
+<li>更容易做成個人 AI 管家 / 日常工作中樞</li>
+<li>workflow / channel / cron / memory 感更直接</li>
+<li>比較適合深度客製自己的系統</li>
+</ul>
+<p>也就是說，兩者雖然都在做 agent platform，但哲學有點不同。</p>
+<p>Hermes Agent 更像大平台。OpenClaw 更像高可塑 runtime。</p>
+<h2>我現在的判斷</h2>
+<p>我對 Hermes Agent 的看法很簡單：</p>
+<p>### 值得追蹤度：很高</p>
+<p>因為它正在處理 agent 平台最真實的問題，而不是只做表面 demo。</p>
+<p>### 穩定導入難度：不低</p>
+<p>因為 release 很快、issue 很多、provider / gateway / sub-agent 複雜度都高。</p>
+<p>### 內容價值：非常高</p>
+<p>因為它非常適合拿來看：</p>
+<ul>
+<li>agent platform 怎麼長大</li>
+<li>gateway 怎麼成為中樞</li>
+<li>sub-agent 怎麼暴露平台摩擦</li>
+<li>provider abstraction 會在哪裡裂開</li>
+</ul>
+<h2>最後一句話</h2>
+<p>Hermes Agent 最值得追的，不只是因為它大，而是因為它正在把 agent 平台真正困難的地方暴露出來。</p>
+<p>如果你要看未來 agent 系統怎麼從工具變成平台，這個 repo 很值得持續盯。</p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
