@@ -167,6 +167,44 @@ a:hover { text-decoration: underline; }
   max-width: 760px;
 }
 
+.article-cover {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  margin: 0 0 16px;
+  display: block;
+}
+
+.article-cover-fallback {
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  margin: 0 0 16px;
+  min-height: 220px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    linear-gradient(135deg, rgba(7,11,24,0.95), rgba(17,27,55,0.92)),
+    radial-gradient(circle at 15% 20%, rgba(110,168,254,0.30), transparent 25%),
+    radial-gradient(circle at 82% 18%, rgba(126,240,200,0.18), transparent 20%),
+    radial-gradient(circle at 70% 80%, rgba(142,110,254,0.18), transparent 24%);
+}
+
+.article-cover-fallback h2 {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 3vw, 2.3rem);
+  line-height: 1.15;
+}
+
+.article-cover-fallback p {
+  margin: 0;
+  color: #dce6ff;
+  max-width: 680px;
+}
+
 .content h1, .content h2, .content h3 { line-height: 1.25; }
 .content p, .content li, .content blockquote { font-size: 1.05rem; }
 .content blockquote {
