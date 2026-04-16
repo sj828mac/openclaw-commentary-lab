@@ -201,5 +201,34 @@
         "description": "Telegram / Threads / Blog intro 三種渠道輸出。"
       }
     ]
+  },
+  {
+    "topic": "evolver",
+    "title": "EvoMap Evolver",
+    "description": "EvoMap/evolver 追蹤分析：一個試圖把 agent 自我演化、錯誤修補與 Hub/Worker/Proxy 鏈路推進到工程現場的高概念平台樣本。",
+    "sourceDir": "evolver",
+    "variants": [
+      {
+        "source": "publish-ready-v1.md",
+        "slug": "evolver-editorial",
+        "title": "EvoMap Evolver｜長文評論版",
+        "style": "Editorial",
+        "description": "完整論述版，適合正式 blog / 電子報。"
+      },
+      {
+        "source": "short-post-v1.md",
+        "slug": "evolver-quick",
+        "title": "EvoMap Evolver｜短版快評版",
+        "style": "Quick Take",
+        "description": "縮短版核心觀點，適合快速發佈。"
+      },
+      {
+        "source": "channel-variants.md",
+        "slug": "evolver-channel",
+        "title": "EvoMap Evolver｜渠道變體版",
+        "style": "Channel Variants",
+        "description": "Telegram / Threads / Blog intro 三種渠道輸出。"
+      }
+    ]
   }
 ]

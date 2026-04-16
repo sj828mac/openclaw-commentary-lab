@@ -187,5 +187,32 @@
     "topic": "agent-platform-tracking-method",
     "status": "published",
     "path": "posts/agent-platform-tracking-method-channel.html"
+  },
+  {
+    "slug": "evolver-editorial",
+    "title": "EvoMap Evolver｜長文評論版",
+    "style": "Editorial",
+    "description": "完整論述版，適合正式 blog / 電子報。",
+    "topic": "evolver",
+    "status": "published",
+    "path": "posts/evolver-editorial.html"
+  },
+  {
+    "slug": "evolver-quick",
+    "title": "EvoMap Evolver｜短版快評版",
+    "style": "Quick Take",
+    "description": "縮短版核心觀點，適合快速發佈。",
+    "topic": "evolver",
+    "status": "published",
+    "path": "posts/evolver-quick.html"
+  },
+  {
+    "slug": "evolver-channel",
+    "title": "EvoMap Evolver｜渠道變體版",
+    "style": "Channel Variants",
+    "description": "Telegram / Threads / Blog intro 三種渠道輸出。",
+    "topic": "evolver",
+    "status": "published",
+    "path": "posts/evolver-channel.html"
   }
 ]
