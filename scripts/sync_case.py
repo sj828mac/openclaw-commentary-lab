@@ -57,10 +57,12 @@ def md_to_html(md: str) -> str:
 
 def wrap_page(title: str, style: str, description: str, content_html: str) -> str:
     template = (ROOT / "templates" / "post-template.html").read_text(encoding="utf-8")
+    safe_title = html.escape(title, quote=True)
+    safe_desc = html.escape(description, quote=True)
     return (
-        template.replace("{{TITLE}}", title)
-        .replace("{{STYLE}}", style)
-        .replace("{{DESCRIPTION}}", description)
+        template.replace("{{TITLE}}", safe_title)
+        .replace("{{STYLE}}", html.escape(style))
+        .replace("{{DESCRIPTION}}", safe_desc)
         .replace("{{CONTENT}}", content_html)
     )
 
