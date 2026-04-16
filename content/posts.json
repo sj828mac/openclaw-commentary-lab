@@ -1,7 +1,7 @@
 [
   {
     "slug": "ai-hedge-fund-editorial",
-    "title": "ai-hedge-fund 長文評論版",
+    "title": "AI Hedge Fund 長文評論版",
     "style": "Editorial",
     "description": "完整論述版，適合正式 blog / 電子報。",
     "topic": "ai-hedge-fund",
@@ -10,7 +10,7 @@
   },
   {
     "slug": "ai-hedge-fund-quick",
-    "title": "ai-hedge-fund 短版快評版",
+    "title": "AI Hedge Fund 短版快評版",
     "style": "Quick Take",
     "description": "縮短版核心觀點，適合快速發佈。",
     "topic": "ai-hedge-fund",
@@ -19,7 +19,7 @@
   },
   {
     "slug": "ai-hedge-fund-channel",
-    "title": "ai-hedge-fund 渠道變體版",
+    "title": "AI Hedge Fund 渠道變體版",
     "style": "Channel Variants",
     "description": "Telegram / Threads / Blog intro 三種渠道輸出。",
     "topic": "ai-hedge-fund",
@@ -28,7 +28,7 @@
   },
   {
     "slug": "graphify-editorial",
-    "title": "graphify 長文評論版",
+    "title": "Graphify 長文評論版",
     "style": "Editorial",
     "description": "完整論述版，適合正式 blog / 電子報。",
     "topic": "graphify",
@@ -37,7 +37,7 @@
   },
   {
     "slug": "graphify-quick",
-    "title": "graphify 短版快評版",
+    "title": "Graphify 短版快評版",
     "style": "Quick Take",
     "description": "縮短版核心觀點，適合快速發佈。",
     "topic": "graphify",
@@ -46,7 +46,7 @@
   },
   {
     "slug": "graphify-channel",
-    "title": "graphify 渠道變體版",
+    "title": "Graphify 渠道變體版",
     "style": "Channel Variants",
     "description": "Telegram / Threads / Blog intro 三種渠道輸出。",
     "topic": "graphify",
@@ -55,7 +55,7 @@
   },
   {
     "slug": "mempalace-editorial",
-    "title": "mempalace 長文評論版",
+    "title": "MemPalace 長文評論版",
     "style": "Editorial",
     "description": "完整論述版，適合正式 blog / 電子報。",
     "topic": "mempalace",
@@ -64,7 +64,7 @@
   },
   {
     "slug": "mempalace-quick",
-    "title": "mempalace 短版快評版",
+    "title": "MemPalace 短版快評版",
     "style": "Quick Take",
     "description": "縮短版核心觀點，適合快速發佈。",
     "topic": "mempalace",
@@ -73,7 +73,7 @@
   },
   {
     "slug": "mempalace-channel",
-    "title": "mempalace 渠道變體版",
+    "title": "MemPalace 渠道變體版",
     "style": "Channel Variants",
     "description": "Telegram / Threads / Blog intro 三種渠道輸出。",
     "topic": "mempalace",
@@ -82,7 +82,7 @@
   },
   {
     "slug": "recent-github-repos-editorial",
-    "title": "recent-github-repos 長文評論版",
+    "title": "最近在追的 3 個 GitHub repo｜長文評論版",
     "style": "Editorial",
     "description": "完整論述版，適合正式 blog / 電子報。",
     "topic": "recent-github-repos",
@@ -91,7 +91,7 @@
   },
   {
     "slug": "recent-github-repos-quick",
-    "title": "recent-github-repos 短版快評版",
+    "title": "最近在追的 3 個 GitHub repo｜短版快評版",
     "style": "Quick Take",
     "description": "縮短版核心觀點，適合快速發佈。",
     "topic": "recent-github-repos",
@@ -100,7 +100,7 @@
   },
   {
     "slug": "recent-github-repos-channel",
-    "title": "recent-github-repos 渠道變體版",
+    "title": "最近在追的 3 個 GitHub repo｜渠道變體版",
     "style": "Channel Variants",
     "description": "Telegram / Threads / Blog intro 三種渠道輸出。",
     "topic": "recent-github-repos",
@@ -109,7 +109,7 @@
   },
   {
     "slug": "hermes-agent-editorial",
-    "title": "hermes-agent 長文評論版",
+    "title": "Hermes Agent 長文評論版",
     "style": "Editorial",
     "description": "完整論述版，適合正式 blog / 電子報。",
     "topic": "hermes-agent",
@@ -118,7 +118,7 @@
   },
   {
     "slug": "hermes-agent-quick",
-    "title": "hermes-agent 短版快評版",
+    "title": "Hermes Agent 短版快評版",
     "style": "Quick Take",
     "description": "縮短版核心觀點，適合快速發佈。",
     "topic": "hermes-agent",
@@ -127,7 +127,7 @@
   },
   {
     "slug": "hermes-agent-channel",
-    "title": "hermes-agent 渠道變體版",
+    "title": "Hermes Agent 渠道變體版",
     "style": "Channel Variants",
     "description": "Telegram / Threads / Blog intro 三種渠道輸出。",
     "topic": "hermes-agent",
@@ -136,7 +136,7 @@
   },
   {
     "slug": "hermes-vs-openclaw-editorial",
-    "title": "hermes-vs-openclaw 長文評論版",
+    "title": "Hermes Agent vs OpenClaw｜長文評論版",
     "style": "Editorial",
     "description": "完整論述版，適合正式 blog / 電子報。",
     "topic": "hermes-vs-openclaw",
@@ -145,7 +145,7 @@
   },
   {
     "slug": "hermes-vs-openclaw-quick",
-    "title": "hermes-vs-openclaw 短版快評版",
+    "title": "Hermes Agent vs OpenClaw｜短版快評版",
     "style": "Quick Take",
     "description": "縮短版核心觀點，適合快速發佈。",
     "topic": "hermes-vs-openclaw",
@@ -154,7 +154,7 @@
   },
   {
     "slug": "hermes-vs-openclaw-channel",
-    "title": "hermes-vs-openclaw 渠道變體版",
+    "title": "Hermes Agent vs OpenClaw｜渠道變體版",
     "style": "Channel Variants",
     "description": "Telegram / Threads / Blog intro 三種渠道輸出。",
     "topic": "hermes-vs-openclaw",
@@ -163,7 +163,7 @@
   },
   {
     "slug": "agent-platform-tracking-method-editorial",
-    "title": "agent-platform-tracking-method 長文評論版",
+    "title": "我怎麼追 Agent Platform 類 GitHub Repo｜長文評論版",
     "style": "Editorial",
     "description": "完整論述版，適合正式 blog / 電子報。",
     "topic": "agent-platform-tracking-method",
@@ -172,7 +172,7 @@
   },
   {
     "slug": "agent-platform-tracking-method-quick",
-    "title": "agent-platform-tracking-method 短版快評版",
+    "title": "我怎麼追 Agent Platform 類 GitHub Repo｜短版快評版",
     "style": "Quick Take",
     "description": "縮短版核心觀點，適合快速發佈。",
     "topic": "agent-platform-tracking-method",
@@ -181,7 +181,7 @@
   },
   {
     "slug": "agent-platform-tracking-method-channel",
-    "title": "agent-platform-tracking-method 渠道變體版",
+    "title": "我怎麼追 Agent Platform 類 GitHub Repo｜渠道變體版",
     "style": "Channel Variants",
     "description": "Telegram / Threads / Blog intro 三種渠道輸出。",
     "topic": "agent-platform-tracking-method",
