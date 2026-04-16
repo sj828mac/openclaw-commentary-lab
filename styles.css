@@ -82,6 +82,36 @@ a:hover { text-decoration: underline; }
   margin: 16px 0 0;
 }
 
+.quick-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 22px 0 10px;
+}
+
+.quick-nav a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.quick-nav-card {
+  background: rgba(18,25,51,0.86);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.quick-nav-card h3 {
+  margin: 0 0 8px;
+}
+
+.quick-nav-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
 .article {
   padding: 20px 0 80px;
 }
