@@ -80,7 +80,7 @@
 <p>換句話說，我比較相信它「一直壞在哪裡」，而不是它「說自己會什麼」。</p>
 <h2>3. 我會固定盯三類問題：gateway、sub-agent、provider abstraction</h2>
 <p>如果是 agent platform 類 repo，這三區幾乎一定值得看。</p>
-<p>### Gateway</p>
+<h3>Gateway</h3>
 <p>因為 agent 最後要真的能用，不是只有模型回得出來就好，而是：</p>
 <ul>
 <li>session 要能續</li>
@@ -89,7 +89,7 @@
 <li>多平台行為不能太失控</li>
 </ul>
 <p>只要一個 repo 開始大量修 gateway，通常就代表它已經從「功能存在」走到「實際要用」。</p>
-<p>### Sub-agent / cron / delegation</p>
+<h3>Sub-agent / cron / delegation</h3>
 <p>只要一開始支援：</p>
 <ul>
 <li>cron</li>
@@ -107,7 +107,7 @@
 <li>polling / race condition 會不會出問題</li>
 </ul>
 <p>這些很能反映一個平台是不是已經開始撞到真實工作負載。</p>
-<p>### Provider abstraction</p>
+<h3>Provider abstraction</h3>
 <p>多 provider 一開始看起來很爽，但這通常也是平台最容易裂開的地方。</p>
 <p>因為你很快就會碰到：</p>
 <ul>
@@ -139,7 +139,7 @@
 <p>這通常是平台成熟的重要訊號。</p>
 <h2>5. 我會把 repo 分成三種狀態看</h2>
 <p>這個方法也很實用。</p>
-<p>### A. 產品型高速演進</p>
+<h3>A. 產品型高速演進</h3>
 <p>特徵：</p>
 <ul>
 <li>release 快</li>
@@ -152,7 +152,7 @@
 <li>看主功能線變化</li>
 <li>小心 breaking change</li>
 </ul>
-<p>### B. 基礎設施型平台</p>
+<h3>B. 基礎設施型平台</h3>
 <p>特徵：</p>
 <ul>
 <li>gateway / runner / provider / orchestration 問題很多</li>
@@ -165,7 +165,7 @@
 <li>看哪些地方一再重修</li>
 <li>看 abstraction 是不是穩</li>
 </ul>
-<p>### C. skill / prompt / workflow 包</p>
+<h3>C. skill / prompt / workflow 包</h3>
 <p>特徵：</p>
 <ul>
 <li>code 少</li>
