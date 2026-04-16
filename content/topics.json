@@ -172,5 +172,34 @@
         "description": "Telegram / Threads / Blog intro 三種渠道輸出。"
       }
     ]
+  },
+  {
+    "topic": "agent-platform-tracking-method",
+    "title": "agent-platform-tracking-method",
+    "description": "我怎麼追 agent platform 類 GitHub repo：從 release、gateway、sub-agent 到 provider abstraction 的方法論。",
+    "sourceDir": "agent-platform-tracking-method",
+    "variants": [
+      {
+        "source": "publish-ready-v1.md",
+        "slug": "agent-platform-tracking-method-editorial",
+        "title": "agent-platform-tracking-method 長文評論版",
+        "style": "Editorial",
+        "description": "完整論述版，適合正式 blog / 電子報。"
+      },
+      {
+        "source": "short-post-v1.md",
+        "slug": "agent-platform-tracking-method-quick",
+        "title": "agent-platform-tracking-method 短版快評版",
+        "style": "Quick Take",
+        "description": "縮短版核心觀點，適合快速發佈。"
+      },
+      {
+        "source": "channel-variants.md",
+        "slug": "agent-platform-tracking-method-channel",
+        "title": "agent-platform-tracking-method 渠道變體版",
+        "style": "Channel Variants",
+        "description": "Telegram / Threads / Blog intro 三種渠道輸出。"
+      }
+    ]
   }
 ]

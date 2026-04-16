@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>agent-platform-tracking-method 長文評論版</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="container article">
+    <div class="article-wrap">
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="kicker">Editorial</div>
+          <h3>agent-platform-tracking-method 長文評論版</h3>
+          <p>完整論述版，適合正式 blog / 電子報。</p>
+          <p><a href="../index.html">← 回首頁</a></p>
+        </div>
+      </aside>
+      <main class="content">
+        <h1>agent-platform-tracking-method 可發文版本 v1</h1>
+<h2>標題</h2>
+<p>我怎麼追 agent platform 類 GitHub repo</p>
+<h2>副標</h2>
+<p>不是只看 stars、commit 與 release，而是看哪些地方最容易暴露平台真實的難點。</p>
+<p>---</p>
+<p>最近我在追一些 agent platform 類的 GitHub repo，像 Hermes Agent、OpenClaw 周邊生態、graphify 這種專案。看久之後我慢慢發現，這類 repo 不能用一般工具 repo 的方式追。</p>
+<p>如果你只看：</p>
+<ul>
+<li>stars</li>
+<li>commit 數量</li>
+<li>最近有沒有 release</li>
+</ul>
+<p>你大概只能知道它熱不熱，卻不太知道它到底卡在哪裡，也不太知道它是不是正在往平台層長。</p>
+<p>對我來說，真正有價值的追法不是「看它有沒有更新」，而是：</p>
+<blockquote>看它在哪些地方開始出現平台級摩擦。</blockquote>
+<p>這篇就整理一下，我現在是怎麼追這類 repo 的。</p>
+<h2>1. 先看 release notes，不要先陷進 commit 海裡</h2>
+<p>很多人第一步會先刷 commit，但我現在反而比較常先看 release notes。</p>
+<p>原因很簡單：</p>
+<ul>
+<li>commit 太碎</li>
+<li>單看 commit 很容易高估小修補的重要性</li>
+<li>release note 更容易看出 maintainers 認為什麼是本期重點</li>
+</ul>
+<p>我看 release 的時候，通常不是只看有沒有新功能，而是特別找這幾類字：</p>
+<ul>
+<li>gateway</li>
+<li>sub-agent</li>
+<li>cron</li>
+<li>provider</li>
+<li>migration</li>
+<li>breaking changes</li>
+<li>security</li>
+</ul>
+<p>如果一個 repo 的 release 開始頻繁出現這些字，通常就表示它正在從單點工具往平台層移動。</p>
+<h2>2. 真正的中樞常常不是 README 寫最兇的地方，而是 issue 最常爆的地方</h2>
+<p>README 會告訴你作者想成為什麼。</p>
+<p>Issue / PR 會告訴你它實際上卡在哪裡。</p>
+<p>所以我現在會特別追兩個面：</p>
+<ul>
+<li>README / docs / repo 結構</li>
+<li>最近 issue / PR 的分布</li>
+</ul>
+<p>例如一個 repo README 可能說自己支援很多平台、很多 provider、很多 channel。</p>
+<p>但如果 issue 裡最常出現的是：</p>
+<ul>
+<li>transcript 毀損</li>
+<li>sub-agent 缺環境變數</li>
+<li>provider base_url 拼錯</li>
+<li>長任務沒有進度提示</li>
+</ul>
+<p>那我就知道它真正的中樞其實在：</p>
+<ul>
+<li>gateway</li>
+<li>orchestration</li>
+<li>provider abstraction</li>
+<li>long-running UX</li>
+</ul>
+<p>換句話說，我比較相信它「一直壞在哪裡」，而不是它「說自己會什麼」。</p>
+<h2>3. 我會固定盯三類問題：gateway、sub-agent、provider abstraction</h2>
+<p>如果是 agent platform 類 repo，這三區幾乎一定值得看。</p>
+<p>### Gateway</p>
+<p>因為 agent 最後要真的能用，不是只有模型回得出來就好，而是：</p>
+<ul>
+<li>session 要能續</li>
+<li>訊息要送得對</li>
+<li>approval / status 要清楚</li>
+<li>多平台行為不能太失控</li>
+</ul>
+<p>只要一個 repo 開始大量修 gateway，通常就代表它已經從「功能存在」走到「實際要用」。</p>
+<p>### Sub-agent / cron / delegation</p>
+<p>只要一開始支援：</p>
+<ul>
+<li>cron</li>
+<li>background task</li>
+<li>sub-agent</li>
+<li>delegate_task</li>
+<li>parallel work</li>
+</ul>
+<p>複雜度就會跳一個層級。</p>
+<p>這時最值得看的不是它有沒有這個功能，而是：</p>
+<ul>
+<li>env 有沒有傳對</li>
+<li>context 有沒有壓壞</li>
+<li>session 是否一致</li>
+<li>polling / race condition 會不會出問題</li>
+</ul>
+<p>這些很能反映一個平台是不是已經開始撞到真實工作負載。</p>
+<p>### Provider abstraction</p>
+<p>多 provider 一開始看起來很爽，但這通常也是平台最容易裂開的地方。</p>
+<p>因為你很快就會碰到：</p>
+<ul>
+<li>endpoint shape 不同</li>
+<li>auth 不同</li>
+<li>chat / tools / vision / image 路徑不同</li>
+<li>主 session 可以，子 session 不一定可以</li>
+<li>主流程能跑，cron / delegation 不一定能跑</li>
+</ul>
+<p>所以我追這類 repo 時，會很注意：</p>
+<ul>
+<li>base_url</li>
+<li>model switch</li>
+<li>provider-specific bugs</li>
+<li>compatibility regression</li>
+</ul>
+<h2>4. 小 UX 改動反而很值得看</h2>
+<p>這是我後來很有感的一點。</p>
+<p>很多人只看大功能，但其實像這種小改動也很值得追：</p>
+<ul>
+<li>`/status` 顯示 model/provider</li>
+<li>still working update</li>
+<li>multiline input</li>
+<li>better approval prompt escaping</li>
+<li>clearer delivery state</li>
+</ul>
+<p>為什麼？</p>
+<p>因為當一個 repo 開始修這種東西，通常代表它的問題已經不再只是「能不能跑」，而是「用起來順不順」。</p>
+<p>這通常是平台成熟的重要訊號。</p>
+<h2>5. 我會把 repo 分成三種狀態看</h2>
+<p>這個方法也很實用。</p>
+<p>### A. 產品型高速演進</p>
+<p>特徵：</p>
+<ul>
+<li>release 快</li>
+<li>UI / 功能層更新多</li>
+<li>issue 很雜</li>
+</ul>
+<p>追法：</p>
+<ul>
+<li>看 release note</li>
+<li>看主功能線變化</li>
+<li>小心 breaking change</li>
+</ul>
+<p>### B. 基礎設施型平台</p>
+<p>特徵：</p>
+<ul>
+<li>gateway / runner / provider / orchestration 問題很多</li>
+<li>PR 很多是 fix 與修邊角</li>
+<li>docs 與 config 很重要</li>
+</ul>
+<p>追法：</p>
+<ul>
+<li>看 issue 分布</li>
+<li>看哪些地方一再重修</li>
+<li>看 abstraction 是不是穩</li>
+</ul>
+<p>### C. skill / prompt / workflow 包</p>
+<p>特徵：</p>
+<ul>
+<li>code 少</li>
+<li>規則多</li>
+<li>安裝 / 相容性比功能更容易過時</li>
+</ul>
+<p>追法：</p>
+<ul>
+<li>看 README 是否過時</li>
+<li>看格式是否還相容</li>
+<li>看上游 spec 有沒有變</li>
+</ul>
+<h2>6. 最後我會問自己一個問題</h2>
+<p>我現在看 repo 最後都會問自己：</p>
+<blockquote>它到底在回答什麼重要問題？</blockquote>
+<p>因為 stars 很高不代表對我有用，更新很快也不代表值得追。</p>
+<p>真正值得長期追的 repo，通常是那些剛好在回答某個你真的在意的問題。</p>
+<p>例如：</p>
+<ul>
+<li>AI 平台怎麼產品化？</li>
+<li>gateway 怎麼變成真正可用的中樞？</li>
+<li>sub-agent 怎麼不把上下文搞壞？</li>
+<li>provider abstraction 要怎麼做才不會每個角落都裂開？</li>
+<li>AI 很會寫之後，人類到底還在編輯什麼？</li>
+</ul>
+<p>只要一個 repo 能一直把這類問題攤開來，你就值得繼續看它。</p>
+<h2>結語</h2>
+<p>所以我現在追 agent platform 類 GitHub repo，不太是看它是不是最紅，而是看它是不是正在暴露一個平台真正困難的地方。</p>
+<p>我會優先看：</p>
+<ul>
+<li>release notes</li>
+<li>issue / PR 分布</li>
+<li>gateway</li>
+<li>sub-agent</li>
+<li>provider abstraction</li>
+<li>UX 小修補</li>
+</ul>
+<p>因為這些地方，比 stars 更能告訴我：</p>
+<blockquote>這個 repo 現在到底是在長功能，還是在長平台。</blockquote>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
