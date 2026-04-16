@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>recent-github-repos 長文評論版</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <div class="container article">
+    <div class="article-wrap">
+      <aside class="sidebar">
+        <div class="panel">
+          <div class="kicker">Editorial</div>
+          <h3>recent-github-repos 長文評論版</h3>
+          <p>完整論述版，適合正式 blog / 電子報。</p>
+          <p><a href="../index.html">← 回首頁</a></p>
+        </div>
+      </aside>
+      <main class="content">
+        <h1>recent-github-repos 可發文版本 v1</h1>
+<h2>標題</h2>
+<p>最近在追的 3 個 GitHub repo：Onyx、Harness、Humanizer-zh-TW</p>
+<h2>副標</h2>
+<p>從 AI 平台、工程治理到文字編輯，我最近看到三種很不一樣的開源節奏</p>
+<p>---</p>
+<p>### 摘要</p>
+<p>最近我整理了三個正在追蹤的 GitHub repo：Onyx、Harness 與 Humanizer-zh-TW。它們分別代表 AI 平台、工程基礎設施與寫作技能包三種不同方向。這篇文章不是單純列功能，而是從它們各自解決的問題出發，看三種不同類型的開源專案，如何對應產品化、治理與內容修整。</p>
+<p>---</p>
+<p>最近我花了一些時間看幾個 GitHub repo。原本只是想追一下各自的近況，結果放在一起看之後，反而覺得很有意思。</p>
+<p>因為它們幾乎代表了三種完全不同的開源節奏：</p>
+<ul>
+<li>一種是還在高速往前衝的 AI 產品</li>
+<li>一種是偏成熟穩定的工程平台</li>
+<li>一種則是小而聚焦、但切得很準的技能型專案</li>
+</ul>
+<p>我最近追的三個 repo 是：</p>
+<ul>
+<li>Onyx</li>
+<li>Harness</li>
+<li>Humanizer-zh-TW</li>
+</ul>
+<p>如果只看類型，這三個東西很難被放在一起。</p>
+<p>但如果從「它們各自正在回答什麼問題」來看，反而很適合一起聊。</p>
+<h2>Onyx：很有產品感，也很有速度感</h2>
+<p>先講 `onyx-dot-app/onyx`。</p>
+<p>這個 repo 最明顯的特徵，就是你看得出來它還在快速長大。</p>
+<p>它不是停在 demo 階段的 AI 專案，而是已經有很強的產品感，方向也很清楚：AI chat、RAG、企業搜尋、connector、多模型互動，幾乎都是現在 AI 平台最核心的題目。</p>
+<p>從最近的 commit 和 release 節奏來看，Onyx 的更新密度很高。</p>
+<p>而且它不是只修單點功能，而是同時在往好幾個面向推進，包括：</p>
+<ul>
+<li>chat 體驗</li>
+<li>多模型介面</li>
+<li>indexing 與 ingestion</li>
+<li>connector 穩定性</li>
+<li>multi-tenant 與監控細節</li>
+</ul>
+<p>這類專案很吸引人，因為你會明顯感覺到它不是在維護一個已經完成的東西，而是在持續把產品往下一個階段推。</p>
+<p>但這也是它最需要小心的地方。</p>
+<p>更新快，通常同時意味著兩件事：</p>
+<p>第一，功能進步很快。</p>
+<p>第二，變動風險也高。</p>
+<p>所以如果目標是研究趨勢、看產品方向、觀察 AI 平台如何從功能走向產品，Onyx 很值得追。</p>
+<p>但如果是要拿來導入正式環境，我反而會建議保守一點，不要直接一路跟最新版，而是挑一條小版本線慢慢看。</p>
+<p>簡單說，Onyx 給我的感覺是：</p>
+<blockquote>很值得觀察，但不適合太衝動地使用。</blockquote>
+<h2>Harness：不熱鬧，但很重</h2>
+<p>第二個是 `harness/harness`。</p>
+<p>它和 Onyx 是很不一樣的東西。</p>
+<p>如果說 Onyx 看起來像是在快速進化中的產品，那 Harness 更像是一套成熟工程平台的骨架，現在持續往企業需求和治理細節補強。</p>
+<p>它處理的核心不是 AI，而是更偏基礎設施的題目，例如：</p>
+<ul>
+<li>SCM</li>
+<li>CI/CD</li>
+<li>branch rules</li>
+<li>merge queue</li>
+<li>audit logs</li>
+<li>RBAC</li>
+<li>artifact registry</li>
+</ul>
+<p>這種專案不一定看起來最花俏，但你只要做過團隊開發流程、權限治理、CI pipeline 或內部平台，就會知道這些東西有多關鍵。</p>
+<p>從最近 repo 裡看到的重點，也大多落在這些比較工程、比較治理的細節上：</p>
+<ul>
+<li>commit signature verification</li>
+<li>merge queue protection</li>
+<li>branch rule 調整</li>
+<li>audit logging</li>
+<li>webhook 與 registry 邊角案例</li>
+</ul>
+<p>這些改動不太會讓人有「哇，好炫」的感覺，但通常都很實際。</p>
+<p>因為這類專案一旦做不好，最後影響的不是某個單一功能，而是整個團隊的工作節奏。</p>
+<p>所以 Harness 給我的印象是：</p>
+<blockquote>它不是一個看新功能會很興奮的 repo，而是一個你真的做工程平台時，會很認真看的 repo。</blockquote>
+<p>它的價值不是熱鬧，而是穩定。</p>
+<p>不是展示，而是承載。</p>
+<h2>Humanizer-zh-TW：小型 skill repo 的實用價值</h2>
+<p>第三個 repo 是 `kevintsai1202/Humanizer-zh-TW`。</p>
+<p>和前兩個相比，這個 repo 小很多，也幾乎不算是工程型專案。</p>
+<p>它本質上比較像一個 skill / prompt 規則包，目的很直接：幫使用者去除文字中明顯的 AI 痕跡，讓內容更自然、更像人寫的。</p>
+<p>這類 repo 很容易一開始被低估。</p>
+<p>因為它沒有複雜架構，也沒有大量程式碼，看起來就是一個小型技能包。</p>
+<p>但實際讀下來，我反而覺得它碰到的是一個現在很真實、也很普遍的問題：</p>
+<blockquote>大家現在不一定缺寫作初稿，而是缺「把初稿改得自然」的方法。</blockquote>
+<p>AI 已經很會生成內容了。</p>
+<p>但很多文字一看就還是有一種熟悉的味道：</p>
+<ul>
+<li>空泛的大詞太多</li>
+<li>模板式連接詞太多</li>
+<li>三段式形容太重</li>
+<li>結尾過度空泛</li>
+<li>整體語氣像簡報或新聞稿，不像真的有人在說話</li>
+</ul>
+<p>Humanizer-zh-TW 的價值就在於，它不是只說「這段很 AI」，而是把常見模式拆出來，告訴你哪些地方有問題、為什麼有問題，以及通常可以怎麼改。</p>
+<p>這種整理，對日常寫作其實很有幫助。</p>
+<p>尤其是在 AI 已經會大量幫忙產生草稿的情況下，真正拉開差距的，常常不是生成本身，而是後面的編輯能力。</p>
+<p>當然，這個 repo 也有很明顯的限制。</p>
+<p>它比較像規則手冊，不是成熟產品；維護節奏偏靜態；文檔也已經開始出現一些過時訊號。</p>
+<p>所以如果問我值不值得用，我的答案會是：</p>
+<blockquote>值得吸收，不建議原樣照搬。</blockquote>
+<p>把它當成一套規則來源、編輯框架或 skill 素材，我覺得很有價值。</p>
+<p>但如果期待它是一個直接裝上就能無痛長期使用的工具，那可能會高估它目前的成熟度。</p>
+<h2>三個 repo，剛好代表三種不同問題</h2>
+<p>如果把這三個 repo 放在一起看，其實會很清楚它們各自卡在不同的位置：</p>
+<p>### Onyx 在回答的是：</p>
+<p>AI 平台怎麼快速產品化？</p>
+<p>### Harness 在回答的是：</p>
+<p>工程平台怎麼維持穩定、治理與流程控制？</p>
+<p>### Humanizer-zh-TW 在回答的是：</p>
+<p>當 AI 已經很會寫之後，人類編輯真正的價值還剩下什麼？</p>
+<p>這也是我覺得它們值得一起看的原因。</p>
+<p>不是因為它們是同一類產品，而是因為它們剛好從不同角度回答了「工具與人怎麼分工」這件事。</p>
+<p>Onyx 比較像前台。</p>
+<p>Harness 比較像地基。</p>
+<p>Humanizer-zh-TW 則比較像最後一哩的修整。</p>
+<h2>我現在怎麼看「值得追的 repo」</h2>
+<p>以前我比較容易用 star、更新頻率、熱度去看一個 repo 值不值得追。</p>
+<p>但最近越來越覺得，真正值得追的專案，往往不是因為它最熱門，而是因為它回答了一個你真的在意的問題。</p>
+<p>像 Onyx 值得追，不只是因為它是 AI 專案，而是因為它讓你看到 AI 平台怎麼長成產品。</p>
+<p>Harness 值得追，不只是因為它是工程平台，而是因為它處理的是團隊規模一大之後一定會遇到的治理問題。</p>
+<p>Humanizer-zh-TW 值得追，也不只是因為它是中文 skill，而是因為它剛好切中了一個現在很常見但常被略過的問題：</p>
+<p>當 AI 已經能幫你把話寫出來之後，什麼才算是真的寫好？</p>
+<h2>結語</h2>
+<p>如果只看表面，這三個 repo 很難被放在同一篇文章裡。</p>
+<p>一個偏 AI 平台，一個偏 DevOps / SCM 基礎設施，一個偏寫作規則包。</p>
+<p>但放在一起看之後，我反而覺得它們剛好構成了一條很完整的線：</p>
+<ul>
+<li>生成</li>
+<li>治理</li>
+<li>修整</li>
+</ul>
+<p>這三件事，本來就是今天工具使用最重要的三個面向。</p>
+<p>Onyx 讓我看到產品正在長大。</p>
+<p>Harness 讓我看到系統怎麼撐住團隊。</p>
+<p>Humanizer-zh-TW 則讓我想到，最後留下差異的，很多時候不只是工具有多強，而是人怎麼判斷、怎麼刪改、怎麼讓內容更像自己。</p>
+<p>這大概也是我最近看 repo 最有感的一件事：</p>
+<blockquote>工具會越來越強，但最後拉開差距的，常常還是編輯、取捨與語氣。</blockquote>
+<h2>如果你也有在追有趣的 GitHub repo</h2>
+<p>如果你最近也有在看一些很有代表性的 repo，歡迎一起交流。</p>
+<p>我自己現在越來越喜歡看那種「不一定最大，但剛好回答了一個重要問題」的專案。</p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
