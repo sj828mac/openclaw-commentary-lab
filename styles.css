@@ -136,6 +136,33 @@ a:hover { text-decoration: underline; }
   box-shadow: var(--shadow);
 }
 
+.float-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.float-nav .nav-title {
+  margin: 0 0 4px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.float-nav a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.float-nav a:hover {
+  background: rgba(110,168,254,0.08);
+  text-decoration: none;
+}
+
 .content {
   background: rgba(255,255,255,0.02);
   border: 1px solid var(--border);
